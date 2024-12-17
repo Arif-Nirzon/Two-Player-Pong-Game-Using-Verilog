@@ -4,8 +4,8 @@ module paddle_test(
     input up_p1, down_p1,		
     input up_p2, down_p2,
     output reg [7:0] rows,
-    output reg [7:0] colsr,
-    output reg [7:0] colsg,
+    output reg [7:0] colsr, //for activating red cathodes
+    output reg [7:0] colsg, //for activating green cathodes
     output [7:0] segments,
     output [2:0] cathode_sel
 );
