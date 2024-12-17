@@ -1,7 +1,7 @@
 module clock_divider_10(
     input clk_in,             // 10 MHz input clock
-    output reg clk_out = 0,       // 10 Hz output clock
-    output wire counter_0    // LSB of the counter
+    output reg clk_out = 0,   // 10 Hz output clock
+    output wire counter_0     // LSB of the counter
 );
     reg [20:0] counter = 0;   // 20-bit counter (for divide-by-1,000,000)
 
@@ -14,6 +14,6 @@ module clock_divider_10(
         end
     end
 
-    // Assign the LSBs of the counter to outputs
+    // The LSB is used for randomizing ball direction after reset
     assign counter_0 = counter[0];
 endmodule
