@@ -5,9 +5,9 @@ module paddle_test(
     input up_p2, down_p2,
     output reg [7:0] rows,
     output reg [7:0] colsr,
-	output reg [7:0] colsg,
-	output [7:0] segments,
-	output [2:0] cathode_sel
+    output reg [7:0] colsg,
+    output [7:0] segments,
+    output [2:0] cathode_sel
 );
 
     reg [2:0] p1_pos, p2_pos;        // Paddle positions
@@ -24,26 +24,26 @@ module paddle_test(
 
     // Initialization block
     initial 
-		begin
-			rows = 8'b00000000;
-			colsr = 8'b00000000; // red led
-			colsg = 8'b00000000; // green led
-			
-			p1_pos = 2;               // Initial position for paddle 1
-			p2_pos = 2;               // Initial position for paddle 2
-			ball_x = 4;               // Initial position for the ball
-			ball_y = 4;
-			
-			ball_speed_x =0;
-			ball_speed_y = 1;
-			
-			score_p1 = 0;
-			score_p2 = 0;
-			display_state <= 2'b00;    // Start with displaying paddle 1
-		end
+	begin
+		rows = 8'b00000000;
+		colsr = 8'b00000000; // red led
+		colsg = 8'b00000000; // green led
+		
+		p1_pos = 2;               // Initial position for paddle 1
+		p2_pos = 2;               // Initial position for paddle 2
+		ball_x = 4;               // Initial position for the ball
+		ball_y = 4;
+		
+		ball_speed_x =0;
+		ball_speed_y = 1;
+		
+		score_p1 = 0;
+		score_p2 = 0;
+		display_state <= 2'b00;    // Start with displaying paddle 1
+	end
 	
-	// Display Score
-	seven_seg_test display(clk, reset, score_p1, score_p2, segments, cathode_sel);
+    // Display Score
+    seven_seg_test display(clk, reset, score_p1, score_p2, segments, cathode_sel);
 
     // Sequential logic for updating paddle positions and ball mechanics
     always @(posedge clk_10 or posedge reset) 
