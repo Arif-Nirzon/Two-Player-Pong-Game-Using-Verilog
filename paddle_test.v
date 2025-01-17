@@ -1,4 +1,4 @@
-module paddle_test(
+module main_game(
     input clk,
     input reset,
     input up_p1, down_p1,		
