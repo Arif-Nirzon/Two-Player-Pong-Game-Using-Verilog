@@ -1,4 +1,4 @@
-# Two Player Pong Game Using Verilog
+# Two Player Pong Game on CPLD
 This is the final project of our EEE 304 course (Digital Electronics Laboratory).  
 _**Device used :**_ LP 2900 CPLD Trainer Board  
 _**Software used :**_ Quartus 7.1  
